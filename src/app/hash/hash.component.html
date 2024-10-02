@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+      <h2>Hash SHA-2</h2>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="text" class="form-label">Texto a hashear:</label>
+          <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
+        </div>
+  
+        <div class="mb-3">
+          <label for="variant" class="form-label">Selecciona Variante:</label>
+          <select [(ngModel)]="variant" class="form-control" name="variant">
+            <option value="SHA-224">SHA-224</option>
+            <option value="SHA-256">SHA-256</option>
+            <option value="SHA-384">SHA-384</option>
+            <option value="SHA-512">SHA-512</option>
+          </select>
+        </div>
+  
+        <button type="button" (click)="generateHash()" class="btn btn-primary">Generar Hash</button>
+      </form>
+  
+      <div class="mt-4">
+        <h4>Resultado del Hash:</h4>
+        <p class="alert alert-secondary">{{ hashResult }}</p>
+      </div>
+    </div>
+  </div>
+  

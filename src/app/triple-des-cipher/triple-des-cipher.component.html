@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Cifrado 3DES</h2>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="text" class="form-label">Texto:</label>
+        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
+      </div>
+      <button type="button" (click)="cipherWith3DES()" class="btn btn-primary">Cifrar con 3DES</button>
+      <button type="button" (click)="decipherWith3DES()" class="btn btn-secondary">Descifrar con 3DES</button>
+    </form>
+
+    <div class="mt-4">
+      <h4>Resultado:</h4>
+      <p class="alert alert-secondary">{{ result }}</p>
+    </div>
+  </div>
+</div>

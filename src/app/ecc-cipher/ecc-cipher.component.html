@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+      <h2>Cifrado ECC (Elliptic Curve Cryptography)</h2>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="text" class="form-label">Texto a cifrar:</label>
+          <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
+        </div>
+        <button type="button" (click)="cipherWithECC()" class="btn btn-primary">Cifrar con ECC</button>
+        <button type="button" (click)="decipherWithECC()" class="btn btn-secondary">Descifrar con ECC</button>
+      </form>
+  
+      <div class="mt-4">
+        <h4>Clave Privada:</h4>
+        <p class="alert alert-secondary">{{ privateKey }}</p>
+  
+        <h4>Clave Pública:</h4>
+        <p class="alert alert-secondary">{{ publicKey }}</p>
+  
+        <h4>Mensaje Cifrado:</h4>
+        <p class="alert alert-secondary">{{ encryptedMessage }}</p>
+  
+        <h4>Resultado de Descifrado:</h4>
+        <p class="alert alert-success">{{ decryptedMessage }}</p>
+      </div>
+    </div>
+  </div>
+  

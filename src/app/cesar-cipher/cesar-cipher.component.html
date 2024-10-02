@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Cifrado César</h2>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="text" class="form-label">Texto:</label>
+        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
+      </div>
+      <div class="mb-3">
+        <label for="shift" class="form-label">Desplazamiento:</label>
+        <input id="shift" type="number" [(ngModel)]="shift" class="form-control" name="shift" />
+      </div>
+      <button type="button" (click)="cipherCesar()" class="btn btn-primary">Cifrar</button>
+    </form>
+
+    <div class="mt-3">
+      <h4>Resultado:</h4>
+      <p class="alert alert-secondary">{{ result }}</p>
+    </div>
+  </div>
+</div>
