@@ -91,6 +91,18 @@
   background-color: #1c5984; /* Hover más oscuro */
   transform: translateY(-2px); /* Efecto hover */
 }
+.btn-secondary {
+  background-color: #2980b9; /* Azul elegante */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top:  8px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Arial', sans-serif; /* Fuente legible */
+}
 
 /* Estilo para la sección de resultado */
 .mt-3 {
@@ -112,6 +124,7 @@ h4 {
   word-break: break-word;
   font-family: 'Courier New', monospace;
 }
+
 
 /* Estilo responsive para pantallas pequeñas */
 @media (max-width: 600px) {

@@ -1,31 +1,44 @@
-<div class="card">
-    <div class="card-header">
-      <h2>Hash SHA-2</h2>
-    </div>
-    <div class="card-body">
-      <form>
-        <div class="mb-3">
-          <label for="text" class="form-label">Texto a hashear:</label>
-          <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
-        </div>
-  
-        <div class="mb-3">
-          <label for="variant" class="form-label">Selecciona Variante:</label>
-          <select [(ngModel)]="variant" class="form-control" name="variant">
-            <option value="SHA-224">SHA-224</option>
-            <option value="SHA-256">SHA-256</option>
-            <option value="SHA-384">SHA-384</option>
-            <option value="SHA-512">SHA-512</option>
-          </select>
-        </div>
-  
-        <button type="button" (click)="generateHash()" class="btn btn-primary">Generar Hash</button>
-      </form>
-  
-      <div class="mt-4">
-        <h4>Resultado del Hash:</h4>
-        <p class="alert alert-secondary">{{ hashResult }}</p>
+<div class="card-body">
+  <!-- Instrucciones -->
+  <div class="instructions-container">
+    <h3>Instrucciones:</h3>
+    <ol>
+      <li>Ingresa el mensaje que deseas cifrar o descifrar.</li>
+      <li>Decide qué variante de SHA usar (SHA-224, SHA-256, SHA-384 o SHA-512).</li>
+      <li>Presiona el botón de 'Cifrar' o 'Descifrar' para obtener el resultado.</li>
+    </ol>
+    <p><strong>Ejemplo:</strong> Para el mensaje "HOLA MUNDO" podría convertirse en un hash que se vea algo así:</p>
+    <pre>
+      A7F2E9B1D64C1F55C6E4F3C94A23C1D98C3F80DA
+    </pre>
+    <p>El mensaje cifrado resultante será "HAUOO N LMD".</p>
+  </div>
+
+  <!-- Formulario -->
+  <div class="form-container">
+    <form>
+      <div class="mb-3">
+        <label for="text" class="form-label">Texto a hashear:</label>
+        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text"
+          placeholder="Introduce texto" />
       </div>
+
+      <div class="mb-3">
+        <label for="variant" class="form-label">Selecciona Variante:</label>
+        <select [(ngModel)]="variant" class="form-control" name="variant">
+          <option value="SHA-224">SHA-224</option>
+          <option value="SHA-256">SHA-256</option>
+          <option value="SHA-384">SHA-384</option>
+          <option value="SHA-512">SHA-512</option>
+        </select>
+      </div>
+
+      <button type="button" (click)="generateHash()" class="btn btn-primary">Generar Hash</button>
+    </form>
+
+    <div class="mt-4">
+      <h4>Resultado del Hash:</h4>
+      <p class="alert alert-secondary">{{ hashResult }}</p>
     </div>
   </div>
-  
+</div>
