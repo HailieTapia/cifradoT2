@@ -1,33 +1,10 @@
 
  <!-- es donde defines cómo se verá la página principal de tu app. Básicamente, es el esqueleto de tu sitio web -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Cifrados</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/cesar-cipher">Cifrado César</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/escitala-cipher">Cifrado Escítala</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/triple-des-cipher">Cifrado 3DES</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/ecc-cipher">Cifrado ECC</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/hash">Hash SHA-2</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+ <app-header></app-header> <!-- Header incluido aquí -->
 
-<div class="container mt-5">
-  <router-outlet></router-outlet>
-</div>
+ <div class="container mt-5">
+   <router-outlet></router-outlet> <!-- Aquí va el contenido dinámico -->
+ </div>
+ 
+ <app-footer></app-footer> <!-- Footer incluido aquí -->
+ 
