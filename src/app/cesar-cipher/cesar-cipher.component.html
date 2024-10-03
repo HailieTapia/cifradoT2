@@ -1,15 +1,24 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Cifrado César</h2>
+<div class="card-body">
+  <!-- Instrucciones -->
+  <div class="instructions-container">
+    <h3>Instrucciones:</h3>
+    <ol>
+      <li>Ingresa un texto que deseas cifrar o descifrar.</li>
+      <li>Introduce una clave numérica, que será el número de desplazamientos de cada letra en el alfabeto.</li>
+      <li>Presiona el botón de 'Cifrar' para codificar el mensaje o 'Descifrar' para recuperar el texto original.</li>
+    </ol>
+    <p><strong>Ejemplo:</strong> Con una clave de 3, la letra "A" se convierte en "D".</p>
   </div>
-  <div class="card-body">
+  <!-- Formulario -->
+  <div class="form-container">
     <form>
       <div class="mb-3">
-        <label for="text" class="form-label">Texto:</label>
-        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
+        <label for="text" class="form-label">Mensaje a cifrar/descifrar:</label>
+        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text"
+          placeholder="Introduce texto" />
       </div>
       <div class="mb-3">
-        <label for="shift" class="form-label">Desplazamiento:</label>
+        <label for="shift" class="form-label">Llave de Cifrado (sólo números):</label>
         <input id="shift" type="number" [(ngModel)]="shift" class="form-control" name="shift" />
       </div>
       <button type="button" (click)="cipherCesar()" class="btn btn-primary">Cifrar</button>

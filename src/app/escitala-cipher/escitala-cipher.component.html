@@ -1,23 +1,39 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Cifrado Escítala</h2>
-  </div>
-  <div class="card-body">
-    <form>
-      <div class="mb-3">
-        <label for="text" class="form-label">Texto:</label>
-        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
-      </div>
-      <div class="mb-3">
-        <label for="rows" class="form-label">Número de filas:</label>
-        <input id="rows" type="number" [(ngModel)]="rows" class="form-control" name="rows" />
-      </div>
-      <button type="button" (click)="cipherEscitala()" class="btn btn-primary">Cifrar</button>
-    </form>
 
-    <div class="mt-3">
-      <h4>Resultado:</h4>
-      <p class="alert alert-secondary">{{ result }}</p>
+  <div class="card-body">
+    <!-- Instrucciones -->
+    <div class="instructions-container">
+      <h3>Instrucciones:</h3>
+      <ol>
+        <li>Ingresa el mensaje que deseas cifrar o descifrar.</li>
+        <li>Introduce un número que representará la cantidad de columnas que deseas utilizar para el cifrado.</li>
+        <li>Presiona el botón de 'Cifrar' o 'Descifrar' para obtener el resultado.</li>
+      </ol>
+      <p><strong>Ejemplo:</strong> Para el mensaje "HOLA MUNDO" con 3 columnas:</p>
+      <pre>
+H O L
+A M U
+N D O
+      </pre>
+      <p>El mensaje cifrado resultante será "HAUOO N LMD".</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="form-container">
+      <form>
+        <div class="mb-3">
+          <label for="text" class="form-label">Mensaje a cifrar/descifrar:</label>
+          <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" required />
+        </div>
+        <div class="mb-3">
+          <label for="rows" class="form-label">Número de Columnas (Grosor de Vara):</label>
+          <input id="rows" type="number" [(ngModel)]="rows" class="form-control" name="rows" min="1" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Cifrar</button>
+      </form>
+
+      <div class="mt-3">
+        <h4>Resultado:</h4>
+        <p class="alert alert-secondary">{{ result }}</p>
+      </div>
     </div>
   </div>
-</div>
