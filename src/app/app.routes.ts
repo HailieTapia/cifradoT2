@@ -5,7 +5,7 @@ import { EscitalaCipherComponent } from './escitala-cipher/escitala-cipher.compo
 import { TripleDesCipherComponent } from './triple-des-cipher/triple-des-cipher.component';
 import { EccCipherComponent } from './ecc-cipher/ecc-cipher.component'; 
 import { HashComponent } from './hash/hash.component'; 
-import { HomeComponent } from './home/home.component'; // Importa el componente Home
+import { HomeComponent } from './home/home.component'; 
 
 export const appRoutes: Routes = [
   { path: 'cesar-cipher', component: CesarCipherComponent },

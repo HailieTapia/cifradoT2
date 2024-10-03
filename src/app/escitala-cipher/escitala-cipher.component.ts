@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms'; 
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-escitala-cipher',
-  standalone: true, // Componente standalone
-  imports: [CommonModule, FormsModule], // Importamos FormsModule aquí
+  standalone: true, 
+  imports: [CommonModule, FormsModule], 
   templateUrl: './escitala-cipher.component.html',
   styleUrls: ['./escitala-cipher.component.css']
 })

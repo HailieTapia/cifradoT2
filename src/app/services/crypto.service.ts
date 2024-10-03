@@ -5,7 +5,7 @@ import * as CryptoJS from 'crypto-js';
   providedIn: 'root'
 })
 export class CryptoService {
-  private secretKey: string = 'TuClaveSecreta'; // Cambia esto a una clave segura.
+  private secretKey: string = 'TuClaveSecreta'; 
 
   constructor() { }
 
