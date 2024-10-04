@@ -27,57 +27,53 @@ p {
   margin-bottom: 20px;
 }
 
-/* Estilo para el contenedor de las tarjetas */
 .cards-container {
-  display: flex; /* Mantener flex para disposición horizontal */
-  overflow-x: auto; /* Permitir desplazamiento horizontal */
-  gap: 20px; /* Espacio entre las tarjetas */
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
   margin-top: 30px;
-  padding-bottom: 10px; /* Espacio al fondo para un poco de margen */
+  padding-bottom: 10px; 
 }
-
-/* Estilo para cada tarjeta */
 .card {
   position: relative;
   padding: 20px; 
-  width: 280px; /* Ajusta según sea necesario */
-  height: 450px; /* Ajusta según sea necesario */
-  background-size: cover; /* Para cubrir toda la tarjeta */
-  background-position: center; /* Centra la imagen */
-  color: white; /* Color del texto */
+  width: 280px; 
+  height: 450px; 
+  background-size: cover; 
+  background-position: center;
+  color: white; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;/* Centra el texto verticalmente */
-  align-items: center; /* Centra el texto horizontalmente */
-  border-radius: 10px; /* Esquinas redondeadas */
-  overflow: hidden; /* Para evitar que el texto se desborde */
-  transition: transform 0.4s ease, opacity 0.4s ease; /* Transición más suave */
+  justify-content: space-between;
+  align-items: center; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  transition: transform 0.4s ease, opacity 0.4s ease; 
 }
 
 .card:hover {
-  transform: scale(1.03); /* Escala más suave */
-  opacity: 0.9; /* Reduce la opacidad al pasar el mouse */
+  transform: scale(1.03);
+  opacity: 0.9; 
 }
 
 .card h2 {
   margin-bottom: auto;
   font-size: 1.7rem;
-  position: relative; /* Para posicionar mejor el texto */
+  position: relative;
   color:#ffffff; 
-  z-index: 1; /* Asegura que el texto esté por encima del fondo */
-  text-shadow: 4px 4px 18px rgba(122, 96, 16, 0.8); /* Sombra del texto más fuerte */
+  z-index: 1;
+  text-shadow: 4px 4px 18px rgba(122, 96, 16, 0.8); 
 }
 
 .card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra la tarjeta */
-  position: absolute; /* Para que la imagen esté detrás del texto */
+  object-fit: cover;
+  position: absolute; 
   top: 0;
   left: 0;
 }
 
-/* Estilo para los botones */
 .btn {
   display: inline-block;
   background-color: #000000c3;
@@ -87,14 +83,14 @@ p {
   width: 70%;
   border-radius: 5px;
   text-decoration: none;
-  font-size: .9 rem; /* Tamaño de la fuente aumentado */
+  font-size: .9 rem;
   cursor: pointer;
-  padding: 5px ; /* Tamaño más pequeño */
-  transition: background-color 0.2s ease, transform 0.2s ease; /* Transición suave */
+  padding: 5px ; 
+  transition: background-color 0.2s ease, transform 0.2s ease; 
 }
 
 .btn:hover {
-  transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el mouse */
+  transform: scale(1.05); 
 }
 
 .btn-primary:hover {
@@ -109,14 +105,13 @@ p {
   background-color: #002f8dd3;
 }
 
-/* Estilo para el modal */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* Oscurece el fondo del modal */
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +127,7 @@ p {
   text-align: center;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   animation: slide-down 0.4s ease;
-  border: 2px solid #000; /* Borde alrededor del modal */
+  border: 2px solid #000; 
 }
 
 .modal-content h2 {
@@ -161,11 +156,11 @@ p {
 /* Estilo responsive para pantallas pequeñas */
 @media (max-width: 600px) {
   .welcome-section {
-    padding: 10px; /* Reducir padding en pantallas pequeñas */
+    padding: 10px; 
   }
 
   h1 {
-    font-size: 2rem; /* Reducir el tamaño del título en pantallas pequeñas */
+    font-size: 2rem;
   }
   .cards-container {
     flex-direction: column;
@@ -178,20 +173,18 @@ p {
   }
 }
 .info-box {
-  background-color: #f8f8f8; /* Color de fondo claro */
-  border: 1px solid #ddd; /* Borde sutil */
-  border-radius: 10px; /* Esquinas redondeadas */
-  padding: 20px; /* Espaciado interno */
-  margin: 20px 0; /* Margen superior e inferior */
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #f8f8f8; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0; 
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1); 
 }
-
 .info-box h2 {
-  color: #333; /* Color del encabezado */
-  margin-bottom: 10px; /* Espacio inferior */
+  color: #333; 
+  margin-bottom: 10px;
 }
 
 .info-box p {
-  color: #666; /* Color del texto */
-  font-size: 1rem; /* Tamaño de fuente */
-}
+  color: #666; 
+  font-size: 1rem;}
