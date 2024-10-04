@@ -8,6 +8,24 @@
         <label for="text" class="form-label">Texto:</label>
         <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
       </div>
+
+      <div class="mb-3">
+        <label for="key1" class="form-label">Clave 1:</label>
+        <input id="key1" type="password" [(ngModel)]="key1" class="form-control" name="key1" placeholder="Introduce clave 1" />
+      </div>
+
+      <div class="mb-3">
+        <label for="key2" class="form-label">Clave 2:</label>
+        <input id="key2" type="password" [(ngModel)]="key2" class="form-control" name="key2" placeholder="Introduce clave 2" />
+      </div>
+
+      <div class="mb-3">
+        <label for="key3" class="form-label">Clave 3:</label>
+        <input id="key3" type="password" [(ngModel)]="key3" class="form-control" name="key3" placeholder="Introduce clave 3" />
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
       <button type="button" (click)="cipherWith3DES()" class="btn btn-primary">Cifrar con 3DES</button>
       <button type="button" (click)="decipherWith3DES()" class="btn btn-secondary">Descifrar con 3DES</button>
     </form>

@@ -1,29 +1,51 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms';
 import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-triple-des-cipher',
-  standalone: true, // Componente standalone
-  imports: [CommonModule, FormsModule], // Importamos CommonModule y FormsModule aquí
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './triple-des-cipher.component.html',
   styleUrls: ['./triple-des-cipher.component.css']
 })
 export class TripleDesCipherComponent {
-  text: string = '';
-  result: string = '';
-  secretKey: string = 'TuClaveSecreta'; // Cambia esto a una clave segura.
+  text: string = '';     
+  result: string = '';    
+  key1: string = '';     
+  key2: string = '';    
+  key3: string = '';       
+  errorMessage: string = ''; 
 
-  // Cifrar el texto usando 3DES
-  cipherWith3DES() {
-    const cipherText = CryptoJS.TripleDES.encrypt(this.text, this.secretKey).toString();
-    this.result = cipherText;
+  validateInput(): boolean {
+    if (!this.text || !this.key1 || !this.key2 || !this.key3) {
+      this.errorMessage = 'Todos los campos son obligatorios.';
+      return false;
+    }
+
+    if (this.key1.length < 8 || this.key2.length < 8 || this.key3.length < 8) {
+      this.errorMessage = 'Cada clave debe tener al menos 8 caracteres.';
+      return false;
+    }
+
+    this.errorMessage = '';
+    return true;
   }
 
-  // Descifrar el texto usando 3DES
+  cipherWith3DES() {
+    if (this.validateInput()) {
+      const combinedKey = this.key1 + this.key2 + this.key3;
+      const cipherText = CryptoJS.TripleDES.encrypt(this.text, combinedKey).toString();
+      this.result = cipherText;
+    }
+  }
+
   decipherWith3DES() {
-    const bytes = CryptoJS.TripleDES.decrypt(this.result, this.secretKey);
-    this.result = bytes.toString(CryptoJS.enc.Utf8);
+    if (this.validateInput()) {
+      const combinedKey = this.key1 + this.key2 + this.key3;
+      const bytes = CryptoJS.TripleDES.decrypt(this.result, combinedKey);
+      this.result = bytes.toString(CryptoJS.enc.Utf8);
+    }
   }
 }
