@@ -1,17 +1,29 @@
-.home-container {
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  background-image: url('https://media.kingston.com/kingston/hero/ktc-articles-blog-data-security-what-is-encryption-hero-lg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  min-height: 83vh; 
+  transition: all 0.3s ease-in-out; 
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 2.9rem;
+  color: #fafafa;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 6px 6px 18px rgb(255, 191, 0); 
 }
 
 p {
   font-size: 1.2rem;
-  color: #666;
+  color: #ffffffc4;
   margin-bottom: 20px;
 }
 
@@ -20,7 +32,7 @@ p {
   display: flex; /* Mantener flex para disposición horizontal */
   overflow-x: auto; /* Permitir desplazamiento horizontal */
   gap: 20px; /* Espacio entre las tarjetas */
-  margin-top: 10px;
+  margin-top: 30px;
   padding-bottom: 10px; /* Espacio al fondo para un poco de margen */
 }
 
@@ -47,13 +59,13 @@ p {
   opacity: 0.9; /* Reduce la opacidad al pasar el mouse */
 }
 
-
 .card h2 {
   margin-bottom: auto;
+  font-size: 1.7rem;
   position: relative; /* Para posicionar mejor el texto */
   color:#ffffff; 
   z-index: 1; /* Asegura que el texto esté por encima del fondo */
-  text-shadow: 2px 2px 8px rgba(122, 96, 16, 0.8); /* Sombra del texto más fuerte */
+  text-shadow: 4px 4px 18px rgba(122, 96, 16, 0.8); /* Sombra del texto más fuerte */
 }
 
 .card img {
@@ -86,7 +98,7 @@ p {
 }
 
 .btn-primary:hover {
-  background-color: #ffd500;
+  background-color: #002f8dd3;
 }
 
 .btn-secondary {
@@ -94,7 +106,7 @@ p {
 }
 
 .btn-secondary:hover {
-  background-color: #ffd500;
+  background-color: #002f8dd3;
 }
 
 /* Estilo para el modal */
@@ -147,14 +159,39 @@ p {
 }
 
 /* Estilo responsive para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  .welcome-section {
+    padding: 10px; /* Reducir padding en pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 2rem; /* Reducir el tamaño del título en pantallas pequeñas */
+  }
   .cards-container {
     flex-direction: column;
     align-items: center;
   }
-
   .card {
     width: 90%;
+    height: 90%;
     margin-bottom: 20px;
   }
+}
+.info-box {
+  background-color: #f8f8f8; /* Color de fondo claro */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 10px; /* Esquinas redondeadas */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px 0; /* Margen superior e inferior */
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.info-box h2 {
+  color: #333; /* Color del encabezado */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+.info-box p {
+  color: #666; /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente */
 }

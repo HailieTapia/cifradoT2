@@ -1,25 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+<nav class="navbar navbar-expand-lg shadow sticky-top" style="background: linear-gradient(135deg, #0080ffcb, #002f8dd3);">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Métodos de Cifrado</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand d-flex align-items-center" style="font-weight: bold; font-size: 1.9rem;">
+      Métodos de Cifrado
+    </a>
+    <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cesar-cipher">Cifrado César</a>
+          <a class="nav-link text-light" routerLink="/" aria-current="page">
+            <i class="bi bi-shield-lock"></i> Inicio
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/escitala-cipher">Cifrado Escítala</a>
+          <a class="nav-link text-light" routerLink="/cesar-cipher">
+            <i class="bi bi-shield-lock"></i> Cifrado César
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/triple-des-cipher">Cifrado 3DES</a>
+          <a class="nav-link text-light" routerLink="/escitala-cipher">
+            <i class="bi bi-key"></i> Cifrado Escítala
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/ecc-cipher">Cifrado ECC</a>
+          <a class="nav-link text-light" routerLink="/triple-des-cipher">
+            <i class="bi bi-lock"></i> Cifrado 3DES
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/hash">Hash SHA-2</a>
+          <a class="nav-link text-light" routerLink="/ecc-cipher">
+            <i class="bi bi-shield"></i> Cifrado ECC
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/hash">
+            <i class="bi bi-hash"></i> Hash SHA-2
+          </a>
         </li>
       </ul>
     </div>

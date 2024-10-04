@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms'; 
 type CipherMethods = 'cesar' | 'escitala' | 'triple-des' | 'ecc' | 'hash'; // Definir tipo para los métodos de cifrado
 
 @Component({

@@ -1,35 +1,87 @@
 <div class="home-container text-center">
-  <h1>Bienvenido a Métodos de Cifrado</h1>
-  <p>Descubre diferentes técnicas de cifrado y cómo proteger tu información.</p>
-  
+  <div class="welcome-section text-center">
+    <h1>Bienvenido a Métodos de Cifrado</h1>
+    <p>Descubre diferentes técnicas de cifrado y cómo proteger tu información.</p>
+  </div>
   <div class="cards-container">
-    <div class="card" (click)="openModal('cesar')" style="background-image: url('https://plus.unsplash.com/premium_photo-1674506652948-dda165b89070?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    <div class="card" (click)="openModal('cesar')"
+      style="background-image: url('https://plus.unsplash.com/premium_photo-1674506652948-dda165b89070?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
       <h2>Cifrado César</h2>
       <button class="btn btn-primary">Más información</button>
     </div>
 
-    <div class="card" (click)="openModal('escitala')" style="background-image: url('https://plus.unsplash.com/premium_photo-1676618539987-12b7c8a8ae61?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    <div class="card" (click)="openModal('escitala')"
+      style="background-image: url('https://plus.unsplash.com/premium_photo-1676618539987-12b7c8a8ae61?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
       <h2>Cifrado Escítala</h2>
       <button class="btn btn-primary">Más información</button>
     </div>
 
-    <div class="card" (click)="openModal('triple-des')" style="background-image: url('https://multiwebcr.com/wp-content/uploads/2023/05/ciberseguridad-empresas.jpg')">
+    <div class="card" (click)="openModal('triple-des')"
+      style="background-image: url('https://multiwebcr.com/wp-content/uploads/2023/05/ciberseguridad-empresas.jpg')">
       <h2>Cifrado 3DES</h2>
       <button class="btn btn-primary">Más información</button>
     </div>
 
-    <div class="card" (click)="openModal('ecc')" style="background-image: url('https://plus.unsplash.com/premium_photo-1668948924344-69d266ff979e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    <div class="card" (click)="openModal('ecc')"
+      style="background-image: url('https://plus.unsplash.com/premium_photo-1668948924344-69d266ff979e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
       <h2>Cifrado ECC</h2>
       <button class="btn btn-primary">Más información</button>
     </div>
 
-    <div class="card" (click)="openModal('hash')" style="background-image: url('https://plus.unsplash.com/premium_photo-1683936164504-79916cb7ce2c?q=80&w=1984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    <div class="card" (click)="openModal('hash')"
+      style="background-image: url('https://plus.unsplash.com/premium_photo-1683936164504-79916cb7ce2c?q=80&w=1984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
       <h2>Cifrado HASH</h2>
       <button class="btn btn-primary">Más información</button>
     </div>
 
   </div>
 
+  <div class="info-box">
+    <h2>Saber Que...</h2>
+    <p>Los métodos de cifrado son esenciales para proteger la información en la era digital. Aprender sobre ellos te
+      permitirá entender mejor cómo se asegura la confidencialidad y la integridad de los datos.</p>
+  </div>
+  <!-- A trabajar -->
+  <div class="container">
+    <div class="comparison-container">
+      <div class="table-container">
+        <h2 class="text-center">Comparación: Angular vs. Next.js con React</h2>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Criterio</th>
+              <th scope="col">Angular</th>
+              <th scope="col">Next.js con React</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Facilidad de Implementación</td>
+              <td>Curva de aprendizaje más pronunciada; estructura y configuración más estricta.</td>
+              <td>Integración más rápida y sencilla, fácil implementación en cliente y servidor.</td>
+            </tr>
+            <tr>
+              <td>Rendimiento</td>
+              <td>Puedes manejar grandes aplicaciones, pero el renderizado en el cliente puede afectar el rendimiento.</td>
+              <td>Soporte para renderizado en el servidor (SSR) mejora el rendimiento en cifrados intensivos.</td>
+            </tr>
+            <tr>
+              <td>Integración de Librerías</td>
+              <td>Requiere mayor configuración inicial debido a su enfoque basado en módulos.</td>
+              <td>Integración sencilla con librerías de cifrado como `crypto-js` o `ecc-jsbn`.</td>
+            </tr>
+            <tr>
+              <td>Compatibilidad y Seguridad</td>
+              <td>Requiere configuraciones adicionales para maximizar la seguridad en cifrados avanzados.</td>
+              <td>Mejor manejo seguro de datos sensibles con operaciones del lado del servidor.</td>
+            </tr>
+          </tbody>
+        </table>
+        <img src="https://miro.medium.com/v2/resize:fit:727/1*lmxQVh-Vbc6cDv4nUMY7vA.png" alt="Comparación de Cifrados" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  
   <!-- Modal -->
   <div *ngIf="isModalOpen" class="modal-overlay">
     <div class="modal-content">
