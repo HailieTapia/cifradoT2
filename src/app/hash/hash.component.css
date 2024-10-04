@@ -1,28 +1,26 @@
 .card-body {
   display: flex;
-  flex-direction: row; /* Mantener en una fila */
+  flex-direction: row; 
   width: 100%;
-  gap: 20px; /* Espacio entre columnas */
+  gap: 20px;
 }
 
 .instructions-container,
 .form-container {
-  flex: 1; /* Ocupa el mismo espacio */
-  min-width: 300px; /* Ancho mínimo para mejorar la legibilidad */
+  flex: 1; 
+  min-width: 300px; 
 }
 
-/* Estilo de la sección de instrucciones */
 .instructions-container {
-  padding: 20px; /* Espacio interno */
+  padding: 20px; 
 }
 
 .instructions-container h3 {
-  font-size: 1.8rem; /* Fuente más grande */
-  color: #2c3e50; /* Azul marino para un estilo formal */
+  font-size: 1.8rem;
+  color: #2c3e50; 
   margin-bottom: 20px;
-  font-family: 'Georgia', serif; /* Fuente elegante */
+  font-family: 'Georgia', serif; 
 }
-
 .instructions-container ol {
   padding-left: 20px;
   margin-bottom: 20px;
@@ -33,7 +31,7 @@
   color: #34495e;
   font-size: 1.1rem;
   line-height: 1.6;
-  font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
+  font-family: 'Arial', sans-serif; 
 }
 
 .instructions-container pre {
@@ -45,37 +43,35 @@
   font-family: 'Courier New', monospace;
 }
 
-/* Estilo para el formulario */
 .form-container {
-  flex: 1; /* Ocupa el 50% del espacio */
+  flex: 1; 
 }
 
-/* Estilo responsive para pantallas pequeñas */
 @media (max-width: 600px) {
   .card-body {
-    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-    gap: 20px; /* Espacio entre elementos */
-    padding: 10px; /* Relleno alrededor del contenedor */
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px; 
   }
 
   .instructions-container,
   .form-container {
-    width: 100%; /* Asegurarse de ocupar todo el ancho */
-    padding: 10px; /* Espacio interno en móviles */
+    width: 100%; 
+    padding: 10px; 
   }
 
   .instructions-container h3,
   .form-label,
   h4 {
-    font-size: 1.5rem; /* Ajustar tamaño de fuente para mejor legibilidad */
+    font-size: 1.3rem; 
   }
 
   .form-control,
   .btn-primary {
-    font-size: 1rem; /* Tamaño de fuente más pequeño para botones y entradas */
+    font-size: 1rem; 
   }
 
   .btn-primary {
-    padding: 10px; /* Relleno más pequeño para botones en móviles */
+    padding: 10px; 
   }
 }

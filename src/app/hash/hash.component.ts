@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import * as CryptoJS from 'crypto-js'; // Import the CryptoJS library
+import * as CryptoJS from 'crypto-js'; 
 
 @Component({
   selector: 'app-sha2-hash',
@@ -11,17 +11,16 @@ import * as CryptoJS from 'crypto-js'; // Import the CryptoJS library
   styleUrls: ['./hash.component.css']
 })
 export class HashComponent {
-  text: string = ''; // Text to hash
-  variant: string = 'SHA-256'; // Default SHA variant
-  hashResult: string = ''; // Result of the hash
-  errorMessage: string = ''; // Error message for user feedback
+  text: string = ''; 
+  variant: string = 'SHA-256'; 
+  hashResult: string = ''; 
+  errorMessage: string = ''; 
 
-  // Method to generate the hash based on the selected variant
   generateHash() {
-    this.errorMessage = ''; // Reset any previous error message
+    this.errorMessage = ''; 
     if (!this.text) {
       this.errorMessage = 'Por favor, introduzca el texto a codificar.';
-      return; // Exit if the text is empty
+      return; 
     }
 
     switch (this.variant) {

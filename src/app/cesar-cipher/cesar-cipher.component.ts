@@ -31,7 +31,7 @@ export class CesarCipherComponent {
     }
   }
 
-  // Método para transformar texto (cifrar o descifrar)
+  // Método para transformar texto
   private transformText(text: string, shift: number): string {
     return text.split('').map(char => {
       if (char.match(/[a-z]/i)) {

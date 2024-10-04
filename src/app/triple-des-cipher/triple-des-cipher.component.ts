@@ -1,25 +1,24 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
-import { CommonModule } from '@angular/common'; // Ensure CommonModule is imported
+import { CommonModule } from '@angular/common';
 import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-triple-des-cipher',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Ensure CommonModule is listed here
+  imports: [CommonModule, FormsModule], 
   templateUrl: './triple-des-cipher.component.html',
   styleUrls: ['./triple-des-cipher.component.css']
 })
 export class TripleDesCipherComponent {
-  text: string = ''; // Text to encrypt or decrypt
-  key: string = ''; // Encryption key
-  encryptedMessage: string = ''; // Encrypted message
-  decryptedMessage: string = ''; // Decrypted message
-  errorMessage: string = ''; // Error message for user feedback
+  text: string = '';
+  key: string = ''; 
+  encryptedMessage: string = ''; 
+  decryptedMessage: string = ''; 
+  errorMessage: string = ''; 
 
-  // Method to encrypt the text
   cipher() {
-    this.errorMessage = ''; // Reset previous error message
+    this.errorMessage = ''; 
     if (this.key.length !== 24) {
       this.errorMessage = 'La clave debe tener exactamente 24 caracteres.';
       return;
@@ -27,9 +26,8 @@ export class TripleDesCipherComponent {
     this.encryptedMessage = CryptoJS.TripleDES.encrypt(this.text, this.key).toString();
   }
 
-  // Method to decrypt the text
   decipher() {
-    this.errorMessage = ''; // Reset previous error message
+    this.errorMessage = ''; 
     if (!this.encryptedMessage) {
       this.errorMessage = 'No hay mensaje cifrado para descifrar.';
       return;
