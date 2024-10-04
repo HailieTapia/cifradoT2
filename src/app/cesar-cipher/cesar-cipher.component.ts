@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-cesar-cipher',
   standalone: true, // Componente standalone
-  imports: [CommonModule, FormsModule], // Importamos FormsModule aquí
+  imports: [CommonModule, FormsModule], 
   templateUrl: './cesar-cipher.component.html',
   styleUrls: ['./cesar-cipher.component.css']
 })

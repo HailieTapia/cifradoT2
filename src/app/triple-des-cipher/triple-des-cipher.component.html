@@ -1,38 +1,47 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Cifrado 3DES</h2>
+<div class="card-body">
+  <!-- Instrucciones -->
+  <div class="instructions-container">
+    <h3>Instrucciones:</h3>
+    <ol>
+      <li>Ingresa un texto que deseas cifrar o descifrar.</li>
+      <li>Proporciona una clave de cifrado.Puedes usar el botón para generar una clave
+        aleatoriamente o crear una que contenga caracteres alfanuméricos. Recuerda que la longitud debe ser de 24 caracteres.</li>
+      <li>Haz clic en el botón Cifrar. Esto aplicará el algoritmo a tu mensaje utilizando la clave proporcionada.
+        <br>Después de cifrar, verás el mensaje cifrado en el campo correspondiente.</li>
+      <li>Si deseas volver a leer el mensaje original, haz clic en el botón Descifrar.<br>Proporciona la misma clave
+        utilizada para cifrar el mensaje.El resultado mostrará el mensaje original.
+      </li>
+    </ol>
+    <p><strong>Ejemplo:</strong> Texto a cifrar: "Hola, esto es un mensaje secreto."</p>
+    <p><strong>Clave:</strong> miClave123456789012345678</p>
+    <p><strong>Cifrado:</strong> 2A8B59D3C1E88EFC...</p>
+    <p><strong>Descifrado</strong> Hola, esto es un mensaje secreto</p>
   </div>
-  <div class="card-body">
+  <!-- Formulario -->
+  <div class="form-container">
     <form>
       <div class="mb-3">
-        <label for="text" class="form-label">Texto:</label>
-        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
+        <label for="text" class="form-label">Texto a cifrar:</label>
+        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text"
+          placeholder="Introduce texto" />
       </div>
-
       <div class="mb-3">
-        <label for="key1" class="form-label">Clave 1:</label>
-        <input id="key1" type="password" [(ngModel)]="key1" class="form-control" name="key1" placeholder="Introduce clave 1" />
+        <label for="key" class="form-label">Clave (24 caracteres):</label>
+        <input id="key" type="text" [(ngModel)]="key" class="form-control" name="key" placeholder="Introduce clave" />
+        <button type="button" (click)="setRandomKey()" class="btn btn-success mt-2">Generar clave aleatoria</button>
       </div>
 
-      <div class="mb-3">
-        <label for="key2" class="form-label">Clave 2:</label>
-        <input id="key2" type="password" [(ngModel)]="key2" class="form-control" name="key2" placeholder="Introduce clave 2" />
+      <button type="button" (click)="cipher()" class="btn btn-primary">Cifrar</button>
+      <button type="button" (click)="decipher()" class="btn btn-secondary">Descifrar</button>
+
+
+      <div class="mt-4">
+        <h4>Mensaje Cifrado:</h4>
+        <p class="alert alert-secondary">{{ encryptedMessage }}</p>
+
+        <h4>Resultado de Descifrado:</h4>
+        <p class="alert alert-success">{{ decryptedMessage }}</p>
       </div>
-
-      <div class="mb-3">
-        <label for="key3" class="form-label">Clave 3:</label>
-        <input id="key3" type="password" [(ngModel)]="key3" class="form-control" name="key3" placeholder="Introduce clave 3" />
-      </div>
-
-      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
-
-      <button type="button" (click)="cipherWith3DES()" class="btn btn-primary">Cifrar con 3DES</button>
-      <button type="button" (click)="decipherWith3DES()" class="btn btn-secondary">Descifrar con 3DES</button>
     </form>
-
-    <div class="mt-4">
-      <h4>Resultado:</h4>
-      <p class="alert alert-secondary">{{ result }}</p>
-    </div>
   </div>
 </div>

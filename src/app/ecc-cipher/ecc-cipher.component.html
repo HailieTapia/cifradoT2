@@ -1,30 +1,41 @@
-<div class="card">
-    <div class="card-header">
-      <h2>Cifrado ECC (Elliptic Curve Cryptography)</h2>
-    </div>
-    <div class="card-body">
-      <form>
-        <div class="mb-3">
-          <label for="text" class="form-label">Texto a cifrar:</label>
-          <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text" placeholder="Introduce texto" />
-        </div>
-        <button type="button" (click)="cipherWithECC()" class="btn btn-primary">Cifrar con ECC</button>
-        <button type="button" (click)="decipherWithECC()" class="btn btn-secondary">Descifrar con ECC</button>
-      </form>
-  
-      <div class="mt-4">
-        <h4>Clave Privada:</h4>
-        <p class="alert alert-secondary">{{ privateKey }}</p>
-  
-        <h4>Clave Pública:</h4>
-        <p class="alert alert-secondary">{{ publicKey }}</p>
-  
-        <h4>Mensaje Cifrado:</h4>
-        <p class="alert alert-secondary">{{ encryptedMessage }}</p>
-  
-        <h4>Resultado de Descifrado:</h4>
-        <p class="alert alert-success">{{ decryptedMessage }}</p>
-      </div>
-    </div>
+<div class="card-body">
+  <!-- Instrucciones -->
+  <div class="instructions-container">
+    <h3>Instrucciones:</h3>
+    <ol>
+      <li>Ingresa el texto que deseas cifrar.</li>
+      <li>Haz clic en el botón "Cifrar". Esto generará una firma digital para tu mensaje usando tu clave privada.</li>
+      <li>Se generarán las siguientes claves:<br>
+        <strong>Clave Privada:</strong> Esta clave es solo para ti. No la compartas con nadie.<br>
+        <strong>Clave Pública:</strong> Esta clave puedes compartirla con otros para que puedan verificar la firma de tus mensajes.</li>
+      <li>Para verificar la autenticidad de un mensaje, haz clic en el botón "Descifrar". El resultado indicará si la firma es válida o no.</li>
+    </ol>
+    <p><strong>Nota:</strong> La firma digital garantiza que el mensaje no ha sido alterado y proviene de una fuente confiable.</p>
   </div>
   
+  <!-- Formulario -->
+  <div class="form-container">
+    <form>
+      <div class="mb-3">
+        <label for="text" class="form-label">Texto a cifrar:</label>
+        <input id="text" type="text" [(ngModel)]="text" class="form-control" name="text"
+          placeholder="Introduce texto" />
+      </div>
+      <button type="button" (click)="cipherWithECC()" class="btn btn-primary">Cifrar</button>
+      <button type="button" (click)="decipherWithECC()" class="btn btn-secondary">Descifrar</button>
+    </form>
+    <div class="mt-4">
+      <h4>Clave Privada:</h4>
+      <p class="alert alert-secondary">{{ privateKey }}</p>
+
+      <h4>Clave Pública:</h4>
+      <p class="alert alert-secondary">{{ publicKey }}</p>
+
+      <h4>Mensaje Cifrado:</h4>
+      <p class="alert alert-secondary">{{ encryptedMessage }}</p>
+
+      <h4>Resultado de Descifrado:</h4>
+      <p class="alert alert-success">{{ decryptedMessage }}</p>
+    </div>
+  </div>
+</div>

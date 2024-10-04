@@ -1,51 +1,48 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-triple-des-cipher',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './triple-des-cipher.component.html',
   styleUrls: ['./triple-des-cipher.component.css']
 })
 export class TripleDesCipherComponent {
-  text: string = '';     
-  result: string = '';    
-  key1: string = '';     
-  key2: string = '';    
-  key3: string = '';       
-  errorMessage: string = ''; 
+  text: string = '';
+  key: string = '';
+  encryptedMessage: string = '';
+  decryptedMessage: string = '';
 
-  validateInput(): boolean {
-    if (!this.text || !this.key1 || !this.key2 || !this.key3) {
-      this.errorMessage = 'Todos los campos son obligatorios.';
-      return false;
+  cipher() {
+    if (this.key.length !== 24) {
+      alert('La clave debe tener exactamente 24 caracteres.');
+      return;
     }
-
-    if (this.key1.length < 8 || this.key2.length < 8 || this.key3.length < 8) {
-      this.errorMessage = 'Cada clave debe tener al menos 8 caracteres.';
-      return false;
-    }
-
-    this.errorMessage = '';
-    return true;
+    this.encryptedMessage = CryptoJS.TripleDES.encrypt(this.text, this.key).toString();
   }
 
-  cipherWith3DES() {
-    if (this.validateInput()) {
-      const combinedKey = this.key1 + this.key2 + this.key3;
-      const cipherText = CryptoJS.TripleDES.encrypt(this.text, combinedKey).toString();
-      this.result = cipherText;
+  decipher() {
+    if (this.key.length !== 24) {
+      alert('La clave debe tener exactamente 24 caracteres.');
+      return;
     }
+    const bytes = CryptoJS.TripleDES.decrypt(this.encryptedMessage, this.key);
+    this.decryptedMessage = bytes.toString(CryptoJS.enc.Utf8);
   }
 
-  decipherWith3DES() {
-    if (this.validateInput()) {
-      const combinedKey = this.key1 + this.key2 + this.key3;
-      const bytes = CryptoJS.TripleDES.decrypt(this.result, combinedKey);
-      this.result = bytes.toString(CryptoJS.enc.Utf8);
+  generateRandomKey(length: number = 24): string {
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let key = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      key += charset[randomIndex];
     }
+    return key;
+  }
+
+  setRandomKey() {
+    this.key = this.generateRandomKey();
   }
 }
