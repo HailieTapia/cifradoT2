@@ -23,6 +23,7 @@
       </div>
       <button type="button" (click)="cipherCesar()" class="btn btn-primary">Cifrar</button>
       <button type="button" (click)="decipherCesar()" class="btn btn-secondary">Descifrar</button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
     </form>
 
     <div class="mt-3">

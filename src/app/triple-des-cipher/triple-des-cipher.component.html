@@ -33,6 +33,7 @@
 
       <button type="button" (click)="cipher()" class="btn btn-primary">Cifrar</button>
       <button type="button" (click)="decipher()" class="btn btn-secondary">Descifrar</button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
 
 
       <div class="mt-4">

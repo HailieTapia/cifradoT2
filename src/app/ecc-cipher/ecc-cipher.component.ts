@@ -7,7 +7,7 @@ import * as EC from 'elliptic';
 @Component({
   selector: 'app-ecc-cipher',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Importamos CommonModule y FormsModule
+  imports: [CommonModule, FormsModule],
   templateUrl: './ecc-cipher.component.html',
   styleUrls: ['./ecc-cipher.component.css']
 })
@@ -18,35 +18,51 @@ export class EccCipherComponent {
   publicKey: any;
   encryptedMessage: string = '';
   decryptedMessage: string = '';
+  errorMessage: string = '';
 
   constructor() {
-    // Crear una nueva curva elíptica (usamos 'secp256k1', la misma usada en Bitcoin, pero puedes elegir otra)
+    // Crear una nueva curva elíptica (la misma usada en Bitcoin)
     const ec = new EC.ec('secp256k1');
-    
-    // Generar claves públicas y privadas
+
     const keyPair = ec.genKeyPair();
     this.privateKey = keyPair.getPrivate('hex');
     this.publicKey = keyPair.getPublic('hex');
   }
 
-  // Cifrar el texto usando ECC
   cipherWithECC() {
-    const ec = new EC.ec('secp256k1');
-    const keyPair = ec.keyFromPrivate(this.privateKey);
-    const pubKey = ec.keyFromPublic(this.publicKey, 'hex');
-
-    const encrypted = keyPair.sign(this.text).toDER('hex'); // Firmamos el mensaje
-    this.encryptedMessage = encrypted;
+    this.validateInput(); 
+    if (!this.errorMessage) {
+      const ec = new EC.ec('secp256k1');
+      const keyPair = ec.keyFromPrivate(this.privateKey);
+      
+      try {
+        const encrypted = keyPair.sign(this.text).toDER('hex'); // Firmamos el mensaje
+        this.encryptedMessage = encrypted;
+        this.errorMessage = ''; 
+      } catch (error) {
+        this.errorMessage = 'Error durante el cifrado: ' ;
+      }
+    }
   }
 
-  // Descifrar el texto usando ECC
   decipherWithECC() {
-    const ec = new EC.ec('secp256k1');
-    const keyPair = ec.keyFromPrivate(this.privateKey);
-    const pubKey = ec.keyFromPublic(this.publicKey, 'hex');
+    this.validateInput(); 
+    if (!this.errorMessage && this.encryptedMessage) {
+      const ec = new EC.ec('secp256k1');
+      const pubKey = ec.keyFromPublic(this.publicKey, 'hex');
 
-    // Verificar el mensaje firmado
-    const isValid = pubKey.verify(this.text, this.encryptedMessage);
-    this.decryptedMessage = isValid ? 'Firma válida' : 'Firma no válida';
+      const isValid = pubKey.verify(this.text, this.encryptedMessage);
+      this.decryptedMessage = isValid ? 'Firma válida' : 'Firma no válida';
+      this.errorMessage = '';
+    } else if (!this.encryptedMessage) {
+      this.errorMessage = 'No hay mensaje cifrado para verificar.';
+    }
+  }
+
+  private validateInput() {
+    this.errorMessage = '';
+    if (!this.text) {
+      this.errorMessage = 'El texto no puede estar vacío.';
+    }
   }
 }

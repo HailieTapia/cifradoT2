@@ -31,8 +31,8 @@
           <option value="SHA-512">SHA-512</option>
         </select>
       </div>
-
       <button type="button" (click)="generateHash()" class="btn btn-primary">Generar Hash</button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
     </form>
 
     <div class="mt-4">

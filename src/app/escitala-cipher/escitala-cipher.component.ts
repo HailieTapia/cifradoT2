@@ -15,9 +15,6 @@ export class EscitalaCipherComponent {
   rows: number = 0;
   result: string = '';
   errorMessage: string = '';
-
-  
-  // Método para cifrar
   cipherEscitala() {
     if (this.validateInput()) {
       const columns = Math.ceil(this.text.length / this.rows);
@@ -33,7 +30,6 @@ export class EscitalaCipherComponent {
           }
         }
       }
-
       // Leer la matriz por columnas
       this.result = matrix[0]
         .map((_, i) => matrix.map(row => row[i]).join(''))

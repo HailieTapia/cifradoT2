@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cesar-cipher',
   standalone: true, // Componente standalone
-  imports: [CommonModule, FormsModule], 
+  imports: [CommonModule, FormsModule],
   templateUrl: './cesar-cipher.component.html',
   styleUrls: ['./cesar-cipher.component.css']
 })
@@ -13,15 +13,22 @@ export class CesarCipherComponent {
   text: string = '';
   shift: number = 0;
   result: string = '';
+  errorMessage: string = '';
 
   // Método para cifrar
   cipherCesar() {
-    this.result = this.transformText(this.text, this.shift);
+    this.validateInput(); // Validar entrada antes de procesar
+    if (!this.errorMessage) {
+      this.result = this.transformText(this.text, this.shift);
+    }
   }
 
   // Método para descifrar
   decipherCesar() {
-    this.result = this.transformText(this.text, -this.shift);
+    this.validateInput(); // Validar entrada antes de procesar
+    if (!this.errorMessage) {
+      this.result = this.transformText(this.text, -this.shift);
+    }
   }
 
   // Método para transformar texto (cifrar o descifrar)
@@ -34,6 +41,16 @@ export class CesarCipherComponent {
       }
       return char;
     }).join('');
+  }
+
+  // Método para validar la entrada
+  private validateInput() {
+    this.errorMessage = ''; // Limpiar mensajes de error
+    if (!this.text) {
+      this.errorMessage = 'El texto no puede estar vacío.';
+    } else if (this.shift < 0 || this.shift > 25) {
+      this.errorMessage = 'El desplazamiento debe estar entre 0 y 25.';
+    }
   }
 }
 

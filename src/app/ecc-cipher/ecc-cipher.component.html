@@ -23,6 +23,7 @@
       </div>
       <button type="button" (click)="cipherWithECC()" class="btn btn-primary">Cifrar</button>
       <button type="button" (click)="decipherWithECC()" class="btn btn-secondary">Descifrar</button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
     </form>
     <div class="mt-4">
       <h4>Clave Privada:</h4>
