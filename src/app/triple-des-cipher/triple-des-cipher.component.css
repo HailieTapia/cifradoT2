@@ -1,139 +1,81 @@
 .card-body {
-    display: flex;
-    flex-direction: row; /* Mantener en una fila */
-    width: 100%;
+  display: flex;
+  flex-direction: row; /* Mantener en una fila */
+  width: 100%;
+  gap: 20px; /* Espacio entre columnas */
+}
+
+.instructions-container,
+.form-container {
+  flex: 1; /* Ocupa el mismo espacio */
+  min-width: 300px; /* Ancho mínimo para mejorar la legibilidad */
+}
+
+/* Estilo de la sección de instrucciones */
+.instructions-container {
+  padding: 20px; /* Espacio interno */
+}
+
+.instructions-container h3 {
+  font-size: 1.8rem; /* Fuente más grande */
+  color: #2c3e50; /* Azul marino para un estilo formal */
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif; /* Fuente elegante */
+}
+
+.instructions-container ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.instructions-container ol li {
+  margin-bottom: 15px;
+  color: #34495e;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
+}
+
+.instructions-container pre {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2c3e50;
+  font-family: 'Courier New', monospace;
+}
+
+/* Estilo para el formulario */
+.form-container {
+  flex: 1; /* Ocupa el 50% del espacio */
+}
+
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .card-body {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 10px; /* Relleno alrededor del contenedor */
   }
-  
-  /* Estilo de la sección de instrucciones */
-  .instructions-container {
-    flex: 1; /* Ocupa el 50% del espacio */
-    padding-right: 20px; /* Espacio a la derecha */
-  }
-  
-  .instructions-container h3 {
-    font-size: 1.8rem; /* Fuente más grande */
-    color: #2c3e50; /* Azul marino para un estilo formal */
-    margin-bottom: 20px;
-    font-family: 'Georgia', serif; /* Fuente elegante */
-  }
-  
-  .instructions-container ol {
-    padding-left: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .instructions-container ol li {
-    margin-bottom: 15px;
-    color: #34495e;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
-  }
-  
-  .instructions-container p {
-    font-size: 1.1rem;
-    color: #7f8c8d; /* Gris para subtítulos */
-  }
-  
-  .instructions-container pre {
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1rem;
-    color: #2c3e50;
-    font-family: 'Courier New', monospace;
-  }
-  
-  /* Estilo para el formulario */
+
+  .instructions-container,
   .form-container {
-    flex: 1; /* Ocupa el 50% del espacio */
+    width: 100%; /* Asegurarse de ocupar todo el ancho */
+    padding: 10px; /* Espacio interno en móviles */
   }
-  
-  .form-label {
-    font-size: 1.1rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-  
-  .form-control {
-    font-size: 1.1rem;
-    padding: 12px;
-    border: 1px solid #bdc3c7;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .form-control:focus {
-    border-color: #2980b9; /* Azul más oscuro */
-    box-shadow: 0 0 8px rgba(41, 128, 185, 0.25); /* Efecto focus */
-  }
-  
-  .mb-3 {
-    margin-bottom: 20px; /* Más espacio entre elementos */
-  }
-  
-  /* Botón principal */
-  .btn-primary {
-    background-color: #2980b9; /* Azul elegante */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-family: 'Arial', sans-serif; /* Fuente legible */
-  }
-  
-  .btn-primary:hover {
-    background-color: #1c5984; /* Hover más oscuro */
-    transform: translateY(-2px); /* Efecto hover */
-  }
-  .btn-secondary {
-    background-color: #2980b9; /* Azul elegante */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    margin-top:  8px;
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-family: 'Arial', sans-serif; /* Fuente legible */
-  }
-  
-  /* Estilo para la sección de resultado */
-  .mt-3 {
-    margin-top: 30px; /* Más margen */
-  }
-  
+
+  .instructions-container h3,
+  .form-label,
   h4 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
+    font-size: 1.5rem; /* Ajustar tamaño de fuente para mejor legibilidad */
   }
-  
-  .alert {
-    font-size: 1.1rem;
-    color: #2c3e50;
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    padding: 15px;
-    word-break: break-word;
-    font-family: 'Courier New', monospace;
+
+  .form-control,
+  .btn-primary {
+    font-size: 1rem; /* Tamaño de fuente más pequeño para botones y entradas */
   }
-  
-  /* Estilo responsive para pantallas pequeñas */
-  @media (max-width: 600px) {
-    .card {
-      flex-direction: column; /* Columnas en pantallas pequeñas */
-      gap: 30px;
-    }
-  
-    .instructions-container, .form-container {
-      width: 100%; /* Ocupan el 100% del ancho */
-    }
+
+  .btn-primary {
+    padding: 10px; /* Relleno más pequeño para botones en móviles */
   }
-  
+}
